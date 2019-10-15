@@ -125,7 +125,8 @@ class TestObject < Minitest::Test
   def test_keys_to_sym!
     hash_copy = @hash.dup
     assert_equal hash_copy, @hash
-    assert_equal hash_copy.keys_to_sym!, @hash.keys_to_sym
+    hash_copy.keys_to_sym!
+    assert_equal hash_copy, @hash.keys_to_sym
     refute_equal hash_copy, @hash
   end
 
@@ -167,7 +168,8 @@ class TestObject < Minitest::Test
   def test_keys_to_symbol!
     hash_copy = @hash.dup
     assert_equal hash_copy, @hash
-    assert_equal hash_copy.keys_to_symbol!, @hash.keys_to_symbol
+    hash_copy.keys_to_symbol!
+    assert_equal hash_copy, @hash.keys_to_symbol
     refute_equal hash_copy, @hash
   end
 
@@ -217,7 +219,8 @@ class TestObject < Minitest::Test
   def test_keys_to_string!
     hash_copy = @hash.dup
     assert_equal hash_copy, @hash
-    assert_equal hash_copy.keys_to_string!, @hash.keys_to_string
+    hash_copy.keys_to_string!
+    assert_equal hash_copy, @hash.keys_to_string
     refute_equal hash_copy, @hash
   end
 
