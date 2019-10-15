@@ -88,14 +88,7 @@ class TestObject < Minitest::Test
   end
 
   def test_keys_to_sym
-    expected = {
-      :"Effective Date" => "4/8/2016",
-      :Amount => "20.00",
-      :"Recursive-Item" => {
-        :"one two" => [1, 2],
-        :"Boolean-here" => true
-      }
-    }
+    expected = {:"Effective Date" => "4/8/2016", :Amount => "20.00", :"Recursive-Item" => {:"one two" => [1, 2], :"Boolean-here" => true}}
     assert_equal expected, @hash.keys_to_sym
 
     expected = {:a => "a", :b => "b"}
@@ -131,14 +124,7 @@ class TestObject < Minitest::Test
   end
 
   def test_keys_to_symbol
-    expected = {
-      :effective_date => "4/8/2016",
-      :amount => "20.00",
-      :recursive_item => {
-        :one_two => [1, 2],
-        :boolean_here => true
-      }
-    }
+    expected = {:effective_date => "4/8/2016", :amount => "20.00", :recursive_item => {:one_two => [1, 2], :boolean_here => true}}
     assert_equal expected, @hash.keys_to_symbol
 
     expected = {:a => "a", :b => "b"}
@@ -182,14 +168,7 @@ class TestObject < Minitest::Test
   end
 
   def test_keys_to_string
-    expected = {
-      "effective_date" => "4/8/2016",
-      "amount" => "20.00",
-      "recursive_item" => {
-        "one_two" => [1, 2],
-        "boolean_here" => true
-      }
-    }
+    expected = {"effective_date" => "4/8/2016", "amount" => "20.00", "recursive_item" => {"one_two" => [1, 2], "boolean_here" => true}}
     assert_equal expected, @hash.keys_to_string
 
     expected = {"a" => "a", "b" => "b"}
